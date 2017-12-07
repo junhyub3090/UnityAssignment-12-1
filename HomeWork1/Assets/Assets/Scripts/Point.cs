@@ -17,7 +17,7 @@ public class Point : MonoBehaviour
     }
     private void Update()
     {
-        time += Time.deltaTime*10;
+        time += Time.deltaTime;
 
 
         if (Input.GetKey(KeyCode.RightArrow))
@@ -41,10 +41,10 @@ public class Point : MonoBehaviour
             xMove = 0;
         }
         
-            if (time >= 1)
+            if (time >= 0.2f)
             {
                 this.transform.Translate(new Vector2(xMove, yMove));
-                time = time - 1;
+                time = time - 0.2f;
             }
         
 

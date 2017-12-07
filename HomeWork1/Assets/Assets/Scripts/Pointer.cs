@@ -17,8 +17,8 @@ public class Pointer : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-           Instantiate(Sprite, transform.position, Quaternion.identity);
+            worldPos.z = 0;
+           Instantiate(Sprite, worldPos, Quaternion.identity);
 
         }
     }

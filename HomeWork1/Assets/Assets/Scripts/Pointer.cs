@@ -18,11 +18,7 @@ public class Pointer : MonoBehaviour
         {
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            Vector2 touchPos = new Vector2(worldPos.x, worldPos.y);
-
-            transform.position = touchPos;
-
-            GameObject Clone = Instantiate(Sprite, transform.position, Quaternion.identity) as GameObject;
+           Instantiate(Sprite, transform.position, Quaternion.identity);
 
         }
     }

@@ -5,7 +5,7 @@ public class Point : MonoBehaviour
 {
     public float speed;
     Rigidbody2D rb2D1;
-    private float time;
+    private float time=0;
    
     float xMove, yMove;
    
@@ -17,37 +17,36 @@ public class Point : MonoBehaviour
     }
     private void Update()
     {
-        time += Time.deltaTime;
+        time += Time.deltaTime*10;
 
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            xMove = speed * Time.deltaTime;
+            xMove = speed;
             yMove = 0;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            xMove = -speed * Time.deltaTime;
+            xMove = -speed;
             yMove = 0;
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            yMove = speed * Time.deltaTime;
+            yMove = speed;
             xMove = 0;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            yMove = -speed * Time.deltaTime;
+            yMove = -speed;
             xMove = 0;
         }
-        while(time>=0)
-        {
+        
             if (time >= 1)
             {
                 this.transform.Translate(new Vector2(xMove, yMove));
                 time = time - 1;
             }
-        }
+        
 
 
     }

@@ -5,10 +5,13 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour {
     public GameObject player;
     public GameObject target;
+    public GameObject explosion;
+    public GameObject bullet;
     public float speed;
     private Transform bulletHead;
     private Transform bulletTail;
     private Transform distance;
+
 
 
 	// Use this for initialization
@@ -28,6 +31,14 @@ public class BulletMovement : MonoBehaviour {
         bulletTail.position += PlayerTargetDirection * speed * Time.deltaTime;
         lineRenderer.SetPosition(0,bulletTail.position);
         lineRenderer.SetPosition(1,bulletHead.position);
+        if(Vector3.Dot(PlayerTargetDirection,(target.transform.position-bulletHead.transform.position))<=0)
+        {
+            Instantiate(explosion, target.transform.position, Quaternion.identity);
+            Destroy(explosion, 1);
+            Destroy(bullet);
+
+
+        }
 
     }
 }

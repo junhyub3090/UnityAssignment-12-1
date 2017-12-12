@@ -349,6 +349,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 405269450}
   target: {fileID: 458303874}
+  explosion: {fileID: 1049435295}
+  bullet: {fileID: 961257137}
   speed: 50
 --- !u!120 &961257139
 LineRenderer:
@@ -582,7 +584,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 772469075
+  randomSeed: 1517665027
   InitialModule:
     serializedVersion: 3
     enabled: 1
